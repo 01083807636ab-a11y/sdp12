@@ -14,21 +14,24 @@ st.set_page_config(page_title="냉장뾱", page_icon="🧊", layout="wide")
 
 def brand_logo():
     # A single shared lockup prevents splash and home logos from drifting apart.
-    return '<div class="nb-logo" role="img" aria-label="냉장뾱 로고"><span class="nb-mark" aria-hidden="true"><i></i><b></b></span><span class="nb-name">냉장뾱<span class="nb-dot">.</span></span></div>'
+    return '<div class="nb-logo" role="img" aria-label="냉장뾱 로고"><span class="nb-mark" aria-hidden="true"><i></i><b></b></span><span class="nb-type"><span class="nb-name">FRIDGE<span class="nb-dot">.</span>POP</span><span class="nb-sub">FRESH LIVING, TOGETHER</span></span></div>'
 
 st.html("""<style>
 .nb-logo {display:flex;align-items:center;justify-content:center;gap:15px;
   font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;}
 .nb-mark {display:block;position:relative;width:58px;height:66px;flex:none;
-  border-radius:19px;background:#127561;box-shadow:0 6px 16px #12756118;}
-.nb-mark:before {content:'';position:absolute;left:14px;right:14px;top:26px;height:2px;background:#b5eed4;border-radius:2px;}
+  border-radius:19px;background:#153e35;box-shadow:0 6px 16px #153e3518;}
+.nb-mark:before {content:'';position:absolute;left:14px;right:14px;top:26px;height:2px;background:#c8ad75;border-radius:2px;}
 .nb-mark i,.nb-mark b {position:absolute;left:15px;width:3px;border-radius:3px;background:#effbf5;}
 .nb-mark i {top:14px;height:7px;}.nb-mark b {top:34px;height:15px;}
-.nb-mark:after {content:'';position:absolute;right:10px;top:10px;width:6px;height:6px;border-radius:50%;background:#e3f58b;}
-.nb-name {font-size:38px;font-weight:800;letter-spacing:-2px;line-height:1.2;color:#124e42;white-space:nowrap;}
-.nb-dot {color:#127561;}
+.nb-mark:after {content:'';position:absolute;right:10px;top:10px;width:6px;height:6px;border-radius:50%;background:#c8ad75;}
+.nb-type {display:flex;flex-direction:column;gap:7px;}
+.nb-name {font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif;font-size:30px;font-weight:600;letter-spacing:2px;line-height:1.2;color:#153e35;white-space:nowrap;}
+.nb-sub {font-family:Arial,sans-serif;font-size:8px;letter-spacing:2.2px;color:#75684e;font-weight:600;}
+@media(max-width:380px){.nb-logo{gap:11px}.nb-name{font-size:24px;letter-spacing:1.5px}.nb-sub{font-size:7px;letter-spacing:1.5px}.nb-mark{width:50px;height:60px}}
+.nb-dot {color:#b08d50;}
 .nb-home {margin:8px 0 22px;}.nb-home .nb-logo {justify-content:flex-start;}
-.bbyok-intro {position:fixed;inset:0;z-index:999990;background:#f4faf7;display:flex;
+.bbyok-intro {position:fixed;inset:0;z-index:999990;background:#f7f5ef;display:flex;
   align-items:center;justify-content:center;pointer-events:none;animation:nb-away .35s 1.7s forwards;}
 .nb-splash {animation:nb-pop .7s cubic-bezier(.2,.9,.3,1.2) both;}
 @keyframes nb-pop {0%{opacity:0;transform:translateY(18px) scale(.65)}65%{opacity:1;transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
