@@ -12,48 +12,35 @@ import streamlit as st
 st.set_page_config(page_title="냉장뾱", page_icon="🧊", layout="wide")
 
 
+def brand_logo():
+    # A single shared lockup prevents splash and home logos from drifting apart.
+    return '<div class="nb-logo" role="img" aria-label="냉장뾱 로고"><span class="nb-mark" aria-hidden="true"><i></i><b></b></span><span class="nb-name">냉장뾱<span class="nb-dot">.</span></span></div>'
+
+st.html("""<style>
+.nb-logo {display:flex;align-items:center;justify-content:center;gap:15px;
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;}
+.nb-mark {display:block;position:relative;width:58px;height:66px;flex:none;
+  border-radius:19px;background:#127561;box-shadow:0 6px 16px #12756118;}
+.nb-mark:before {content:'';position:absolute;left:14px;right:14px;top:26px;height:2px;background:#b5eed4;border-radius:2px;}
+.nb-mark i,.nb-mark b {position:absolute;left:15px;width:3px;border-radius:3px;background:#effbf5;}
+.nb-mark i {top:14px;height:7px;}.nb-mark b {top:34px;height:15px;}
+.nb-mark:after {content:'';position:absolute;right:10px;top:10px;width:6px;height:6px;border-radius:50%;background:#e3f58b;}
+.nb-name {font-size:38px;font-weight:800;letter-spacing:-2px;line-height:1.2;color:#124e42;white-space:nowrap;}
+.nb-dot {color:#127561;}
+.nb-home {margin:8px 0 22px;}.nb-home .nb-logo {justify-content:flex-start;}
+.bbyok-intro {position:fixed;inset:0;z-index:999990;background:#f4faf7;display:flex;
+  align-items:center;justify-content:center;pointer-events:none;animation:nb-away .35s 1.7s forwards;}
+.nb-splash {animation:nb-pop .7s cubic-bezier(.2,.9,.3,1.2) both;}
+@keyframes nb-pop {0%{opacity:0;transform:translateY(18px) scale(.65)}65%{opacity:1;transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
+@keyframes nb-away {to{opacity:0;visibility:hidden;}}
+@media(prefers-reduced-motion:reduce){.nb-splash{animation:none}.bbyok-intro{animation:nb-away .01s .6s forwards}}
+</style>""")
+
 def show_brand_intro():
-    """Non-blocking CSS intro, once per Streamlit session; no sound/autoplay."""
     if st.session_state.get("naengjang_bbyok_intro_seen"):
         return
     st.session_state["naengjang_bbyok_intro_seen"] = True
-    st.html("""
-    <style>
-    .bbyok-intro {position:fixed; inset:0; z-index:999990;
-      background:#effbf5; display:flex; align-items:center; justify-content:center;
-      text-align:center; pointer-events:none; animation:bbyok-away .4s 1.9s forwards;
-      font-family:ui-rounded,'Malgun Gothic',sans-serif; color:#164c3f;}
-    .bbyok-brand {animation:bbyok-pop .8s cubic-bezier(.2,.9,.3,1.3) both; padding:24px;}
-    .bbyok-fridge {position:relative; margin:0 auto 22px; width:100px; height:136px;
-      border:4px solid #164c3f; border-radius:22px; background:#92e0bf;
-      box-shadow:7px 8px 0 #d1efdf;}
-    .bbyok-fridge:before {content:'';position:absolute;left:0;right:0;top:43px;
-      height:4px;background:#164c3f;}
-    .bbyok-handle {position:absolute;left:12px;top:17px;width:5px;height:15px;
-      border-radius:4px;background:#164c3f;box-shadow:0 44px 0 #164c3f;}
-    .bbyok-face {position:absolute;left:33px;top:66px;font-size:25px;letter-spacing:3px;}
-    .bbyok-word {position:absolute;right:-38px;top:-18px;background:#ffd66e;
-      border:2px solid #164c3f;border-radius:50%;padding:10px;font-size:18px;font-weight:900;
-      transform:rotate(12deg);}
-    .bbyok-title {font-size:44px;font-weight:900;letter-spacing:-2px;line-height:1.25;}
-    .bbyok-tag {font-size:15px;margin-top:12px;color:#447465;}
-    @keyframes bbyok-pop {0% {opacity:0;transform:scale(.25) translateY(35px)}
-      55% {opacity:1;transform:scale(1.12) translateY(-8px)}
-      78% {transform:scale(.96)} 100% {opacity:1;transform:scale(1)}}
-    @keyframes bbyok-away {to {opacity:0;visibility:hidden;}}
-    @media (prefers-reduced-motion:reduce) {
-      .bbyok-brand {animation:none;} .bbyok-intro {animation:bbyok-away .01s .6s forwards;}
-    }
-    </style>
-    <div class="bbyok-intro" role="status" aria-label="냉장뾱 시작 화면">
-      <div class="bbyok-brand">
-        <div class="bbyok-fridge" aria-hidden="true"><div class="bbyok-handle"></div>
-          <div class="bbyok-face">◡</div><div class="bbyok-word">뾱!</div></div>
-        <div class="bbyok-title">냉장뾱</div>
-        <div class="bbyok-tag">우리 집 냉장고에, 뾱! 하고 여유를</div>
-      </div>
-    </div>
-    """)
+    st.html('<div class="bbyok-intro" role="status" aria-label="냉장뾱 시작 화면"><div class="nb-splash">'+brand_logo()+'</div></div>')
 
 show_brand_intro()
 
@@ -370,10 +357,10 @@ initialize()
 # Additive migration: retain every existing category and all inventory records.
 with connect() as conn:
     conn.executemany("INSERT OR IGNORE INTO categories(name) VALUES(?)", [(n,) for n in INGREDIENT_GROUPS])
-st.title("🧊 냉장뾱")
+st.html('<div class="nb-home">'+brand_logo()+'</div>')
 st.html("""
 <section class="bbyok-hero" aria-label="냉장뾱 소개">
-  <div class="eyebrow">FRESH TOGETHER · 냉장뾱</div>
+  <div class="eyebrow">FRESH TOGETHER</div>
   <div class="headline">냉장고 속 신선함,<br>우리 가족과 뾱!</div>
   <div class="sub">함께 채우고 · 맛있게 요리하고 · 잊기 전에 확인해요</div>
   <div class="bbyok-produce" aria-hidden="true"><span>🥦</span><span>🍋</span><span>🥕</span><span>🥑</span><span>🍅</span></div>
@@ -541,7 +528,23 @@ def shared_fridge():
                         new_name = st.text_input("재료 이름", item['name'])
                         new_date = st.date_input("기한", date.fromisoformat(item['expiry_date']))
                         action = st.selectbox("할 일", ['정보 수정','일부 사용','폐기'])
-                        amount = st.number_input("처리 수량 (사용·폐기할 때)", min_value=0.001, max_value=float(item['quantity']), value=float(item['quantity']), step=0.001, format='%g')
+                        count_units = {"개", "봉", "팩", "병"}
+                        stock = round(float(item['quantity']), 9)
+                        if item['unit'] in count_units and stock.is_integer():
+                            amount = st.number_input("처리 수량 (사용·폐기할 때)", min_value=1,
+                                max_value=int(stock), value=1, step=1, format="%d", key=f"amount_count_{item['id']}_{stock}")
+                            st.caption(f"{int(stock)}{item['unit']} 중 처리할 개수예요. − / + 버튼으로 1개씩 바꿔요.")
+                        elif item['unit'] in count_units:
+                            # Preserve legacy fractional inventory instead of silently rounding it.
+                            amount = st.number_input("처리 수량 (사용·폐기할 때)", min_value=0.001,
+                                max_value=stock, value=min(1.0, stock), step=1.0, format="%.3f",
+                                key=f"amount_legacy_{item['id']}_{stock}")
+                            st.caption("이전에 소수로 저장된 재고예요. 버튼은 1씩 바뀌며, 남은 소수 재고는 ‘전부 사용’으로 정리할 수 있어요.")
+                        else:
+                            amount = st.number_input("처리 수량 (사용·폐기할 때)", min_value=0.001,
+                                max_value=stock, value=min(1.0, stock), step=0.1, format="%.3f",
+                                key=f"amount_measure_{item['id']}_{stock}")
+                            st.caption(f"단위: {item['unit']} · 무게와 부피는 소수로 입력할 수 있어요.")
                         if st.form_submit_button("적용"):
                             try:
                                 if action=='정보 수정':
