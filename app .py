@@ -19,19 +19,22 @@ def brand_logo():
 st.html("""<style>
 .nb-logo {display:flex;align-items:center;justify-content:center;gap:15px;
   font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;}
-.nb-mark {display:block;position:relative;width:58px;height:66px;flex:none;
-  border-radius:19px;background:#153e35;box-shadow:0 6px 16px #153e3518;}
-.nb-mark:before {content:'';position:absolute;left:14px;right:14px;top:26px;height:2px;background:#c8ad75;border-radius:2px;}
-.nb-mark i,.nb-mark b {position:absolute;left:15px;width:3px;border-radius:3px;background:#effbf5;}
-.nb-mark i {top:14px;height:7px;}.nb-mark b {top:34px;height:15px;}
-.nb-mark:after {content:'';position:absolute;right:10px;top:10px;width:6px;height:6px;border-radius:50%;background:#c8ad75;}
+.nb-mark {display:block;position:relative;width:64px;height:64px;flex:none;
+  background:#102a4c;border-radius:43% 43% 39% 39%;transform:rotate(-7deg);
+  box-shadow:3px 4px 0 #91bcf2;overflow:hidden;}
+.nb-mark:before {content:'';position:absolute;left:15px;top:12px;width:34px;height:40px;
+  background:#fff;clip-path:polygon(10% 0,100% 0,100% 22%,36% 22%,36% 42%,86% 42%,86% 64%,36% 64%,36% 100%,10% 100%);}
+.nb-mark i {position:absolute;right:11px;bottom:11px;width:12px;height:12px;background:#79b4ff;
+ border-radius:50%;border:3px solid #102a4c;}
+.nb-mark b {display:none;}
+.nb-mark:after {content:'';position:absolute;left:7px;top:20px;height:29px;width:3px;background:#ffffff33;border-radius:5px;}
 .nb-type {display:flex;flex-direction:column;gap:7px;}
-.nb-name {font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif;font-size:30px;font-weight:600;letter-spacing:2px;line-height:1.2;color:#153e35;white-space:nowrap;}
-.nb-sub {font-family:Arial,sans-serif;font-size:8px;letter-spacing:2.2px;color:#75684e;font-weight:600;}
+.nb-name {font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif;font-size:30px;font-weight:900;letter-spacing:1px;line-height:1.2;color:#102a4c;white-space:nowrap;}
+.nb-sub {font-family:Arial,sans-serif;font-size:8px;letter-spacing:2.2px;color:#526b8a;font-weight:600;}
 @media(max-width:380px){.nb-logo{gap:11px}.nb-name{font-size:24px;letter-spacing:1.5px}.nb-sub{font-size:7px;letter-spacing:1.5px}.nb-mark{width:50px;height:60px}}
-.nb-dot {color:#b08d50;}
+.nb-dot {color:#3988f5;}
 .nb-home {margin:8px 0 22px;}.nb-home .nb-logo {justify-content:flex-start;}
-.bbyok-intro {position:fixed;inset:0;z-index:999990;background:#f7f5ef;display:flex;
+.bbyok-intro {position:fixed;inset:0;z-index:999990;background:#eff5ff;display:flex;
   align-items:center;justify-content:center;pointer-events:none;animation:nb-away .35s 1.7s forwards;}
 .nb-splash {animation:nb-pop .7s cubic-bezier(.2,.9,.3,1.2) both;}
 @keyframes nb-pop {0%{opacity:0;transform:translateY(18px) scale(.65)}65%{opacity:1;transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
@@ -51,18 +54,18 @@ show_brand_intro()
 def apply_mobile_theme():
     st.html("""
     <style>
-    :root {color-scheme:light; --mint:#17785f; --ink:#164c3f; --lemon:#ffdf79;}
+    :root {color-scheme:light; --mint:#2563eb; --ink:#142e54; --lemon:#ffdf79;}
     *, *::before, *::after {box-sizing:border-box;}
     [data-testid="stAppViewContainer"] {
-      background-color:#eaf8f0;
-      background-image:radial-gradient(ellipse at 0% 12%,#b3ebd5 0%,transparent 38%),
-        radial-gradient(ellipse at 100% 40%,#ffedac 0%,transparent 40%),
-        radial-gradient(ellipse at 25% 90%,#c8eee5 0%,transparent 35%),
-        radial-gradient(#85bda54d 1.4px,transparent 1.4px);
+      background-color:#edf4ff;
+      background-image:radial-gradient(ellipse at 0% 12%,#d8e8ff 0%,transparent 38%),
+        radial-gradient(ellipse at 100% 40%,#e5eeff 0%,transparent 40%),
+        radial-gradient(ellipse at 25% 90%,#c9e0ff 0%,transparent 35%),
+        radial-gradient(#a9c9ef30 1.4px,transparent 1.4px);
       background-size:auto,auto,auto,24px 24px;
       color:var(--ink);
     }
-    [data-testid="stHeader"] {background:#eaf8f0ed;}
+    [data-testid="stHeader"] {background:#edf4ffed;}
     [data-testid="stMainBlockContainer"] {
       max-width:940px; padding:2.8rem 1.5rem 4rem;
     }
@@ -71,58 +74,58 @@ def apply_mobile_theme():
     h1 {font-weight:900!important;letter-spacing:-1.4px;}
     [data-testid="stForm"], [data-testid="stVerticalBlockBorderWrapper"]>div {
       background:#ffffffed;border-radius:22px!important;
-      border-color:#c9e8d9!important;
+      border-color:#d1e0f5!important;
     }
-    [data-testid="stForm"] {padding:20px!important;box-shadow:0 6px 20px #17553d09;}
+    [data-testid="stForm"] {padding:20px!important;box-shadow:0 6px 20px #12397809;}
     [data-testid="stExpander"] {
-      background:#ffffffec;border-radius:18px; border:1px solid #c9e8d9;
+      background:#ffffffec;border-radius:18px; border:1px solid #d1e0f5;
     }
     [data-testid="stExpander"] details {border:none!important;}
     [data-testid="stButton"] button,[data-testid="stFormSubmitButton"] button,
     [data-testid="stDownloadButton"] button,[data-testid="stPopover"] button {
-      min-height:48px;border-radius:14px;border:1px solid #b8d9c9;
+      min-height:48px;border-radius:14px;border:1px solid #bbd0ef;
       font-weight:700;background:#fff;color:var(--ink);
     }
-    button[kind="primary"] {background:#17785f!important;color:#fff!important;border-color:#17785f!important;}
+    button[kind="primary"] {background:#2563eb!important;color:#fff!important;border-color:#2563eb!important;}
     button[kind="primary"] p {color:#fff!important;}
     /* Explicit foreground AND background keep fields readable in dark-mode browsers. */
     input,textarea,input:disabled,textarea:disabled {
       font-size:16px!important;line-height:1.5!important;
-      color:#173c32!important;-webkit-text-fill-color:#173c32!important;
-      caret-color:#12664d!important;background:#ffffff!important;opacity:1!important;
+      color:#19375e!important;-webkit-text-fill-color:#19375e!important;
+      caret-color:#1d4ed8!important;background:#ffffff!important;opacity:1!important;
     }
     input::placeholder,textarea::placeholder {
-      color:#52685f!important;-webkit-text-fill-color:#52685f!important;opacity:1!important;
+      color:#536b88!important;-webkit-text-fill-color:#536b88!important;opacity:1!important;
     }
     [data-baseweb="input"],[data-baseweb="base-input"],
     [data-baseweb="textarea"],[data-baseweb="select"]>div {
-      background:#ffffff!important;color:#173c32!important;border-radius:12px!important;
+      background:#ffffff!important;color:#19375e!important;border-radius:12px!important;
     }
     [data-baseweb="input"],[data-baseweb="textarea"],[data-baseweb="select"]>div {
-      border:2px solid #688f7d!important;box-shadow:0 2px 5px #164c3f0d!important;
+      border:2px solid #698bb8!important;box-shadow:0 2px 5px #142e540d!important;
       min-height:50px;
     }
     [data-baseweb="input"]:focus-within,[data-baseweb="textarea"]:focus-within,
     [data-baseweb="select"]:focus-within>div {
-      border-color:#12664d!important;box-shadow:0 0 0 3px #17785f26!important;
+      border-color:#1d4ed8!important;box-shadow:0 0 0 3px #2563eb26!important;
     }
     [data-baseweb="select"] span,[data-baseweb="select"] div {
-      color:#173c32!important;-webkit-text-fill-color:#173c32!important;
+      color:#19375e!important;-webkit-text-fill-color:#19375e!important;
     }
     [data-baseweb="input"] button,[data-baseweb="input"] svg,
-    [data-baseweb="select"] svg {color:#173c32!important;fill:currentColor!important;}
-    [data-baseweb="input"] button {background:#eef7f1!important;}
+    [data-baseweb="select"] svg {color:#19375e!important;fill:currentColor!important;}
+    [data-baseweb="input"] button {background:#edf4ff!important;}
     [data-baseweb="popover"] [role="listbox"],
     [data-baseweb="popover"] [role="option"] {
-      background:#fff!important;color:#173c32!important;
+      background:#fff!important;color:#19375e!important;
     }
     [data-baseweb="popover"] [role="option"]:hover,
-    [data-baseweb="popover"] [aria-selected="true"] {background:#d9f2e5!important;}
-    [data-testid="stWidgetLabel"] p {font-weight:700!important;color:#173c32!important;}
+    [data-baseweb="popover"] [aria-selected="true"] {background:#dceaff!important;}
+    [data-testid="stWidgetLabel"] p {font-weight:700!important;color:#19375e!important;}
     [data-testid="stAlert"] {border-radius:16px;}
     .bbyok-hero {position:relative;overflow:hidden; padding:25px 26px;margin:0 0 12px;
-      border-radius:26px;background:linear-gradient(115deg,#176c55,#278a6a);
-      color:#fff;box-shadow:0 12px 28px #17553d18;}
+      border-radius:26px;background:linear-gradient(115deg,#123978,#2563b9);
+      color:#fff;box-shadow:0 12px 28px #12397818;}
     .bbyok-hero:after {content:'';position:absolute;width:190px;height:190px;
       right:-55px;top:-75px;border:28px solid #ffffff18;border-radius:50%;pointer-events:none;}
     .bbyok-hero .eyebrow {font-size:12px;font-weight:800;letter-spacing:2px;color:#c9f4df;}
@@ -333,6 +336,31 @@ RECIPES = [
 RECIPES.extend([('달걀찜', ['달걀', '소금'], '달걀에 물과 소금을 섞고 약한 불이나 중탕으로 중심까지 완전히 익혀요.'), ('달걀말이', ['달걀', '당근', '대파', '소금', '식용유'], '다진 채소를 달걀물에 섞어 얇게 부치며 말고 속까지 익혀요.'), ('간장달걀밥', ['밥', '달걀', '간장', '참기름'], '달걀을 완전히 익혀 따뜻한 밥 위에 올리고 간장과 참기름을 더해요.'), ('감자전', ['감자', '소금', '식용유'], '감자를 갈아 가라앉은 전분과 섞어 기름 두른 팬에 속까지 부쳐요.'), ('감자조림', ['감자', '간장', '설탕', '식용유'], '감자를 볶다가 물과 간장·설탕을 넣고 부드러워질 때까지 조려요.'), ('두부부침', ['두부', '식용유', '간장'], '두부 물기를 제거해 노릇하게 굽고 간장을 곁들여요.'), ('양배추달걀전', ['양배추', '달걀', '밀가루', '소금', '식용유'], '채 썬 양배추와 달걀·밀가루를 섞어 속까지 완전히 부쳐요.'), ('콩나물국', ['콩나물', '대파', '마늘', '국간장'], '콩나물을 물에 충분히 끓이고 마늘·대파·국간장으로 간해요.'), ('콩나물무침', ['콩나물', '마늘', '참기름', '소금'], '콩나물을 충분히 삶아 건지고 양념에 무쳐요.'), ('시금치무침', ['시금치', '마늘', '참기름', '소금'], '시금치를 데쳐 헹구고 물기를 짜 양념에 무쳐요.'), ('오이무침', ['오이', '고춧가루', '식초', '설탕', '소금'], '오이를 썰어 소금에 살짝 절이고 물기를 뺀 뒤 양념에 무쳐요.'), ('애호박볶음', ['애호박', '양파', '마늘', '식용유', '소금'], '채소를 썰어 기름에 볶고 마늘과 소금으로 간해요.'), ('팽이버섯달걀전', ['팽이버섯', '달걀', '소금', '식용유'], '잘게 자른 버섯과 달걀을 섞어 버섯과 달걀이 모두 충분히 익도록 부쳐요.'), ('버섯볶음', ['새송이버섯', '양파', '간장', '식용유'], '버섯과 양파를 썰어 볶다가 간장으로 간해요.'), ('김치전', ['김치', '밀가루', '식용유'], '김치와 밀가루·물을 섞어 반죽하고 얇게 펼쳐 속까지 부쳐요.'), ('김치두부국', ['김치', '두부', '대파'], '김치를 물에 끓인 뒤 두부와 대파를 넣어 익혀요.'), ('돼지고기김치찌개', ['돼지고기', '김치', '두부', '마늘'], '돼지고기와 김치를 볶다가 물을 넣고 고기가 속까지 익도록 끓여요.'), ('된장찌개', ['된장', '두부', '애호박', '감자', '양파', '마늘'], '물에 된장을 풀고 감자를 먼저 넣은 뒤 나머지 재료를 넣어 익혀요.'), ('소고기뭇국', ['소고기', '무', '국간장', '마늘', '참기름'], '소고기와 무를 볶아 물을 붓고 고기가 충분히 익도록 끓여요.'), ('어묵국', ['어묵', '무', '대파', '국간장'], '무를 먼저 끓이고 어묵과 대파를 넣어 충분히 끓여 간해요.'), ('떡국', ['떡국떡', '달걀', '대파', '국간장'], '물에 떡을 넣어 부드러워질 때까지 끓이고 달걀을 넣어 완전히 익혀요.'), ('만둣국', ['만두', '달걀', '대파', '국간장'], '만두를 제품 조리법대로 속까지 익히고 달걀과 대파를 넣어 끓여요.'), ('떡볶이', ['떡', '어묵', '고추장', '설탕', '대파'], '물에 고추장과 설탕을 풀고 떡과 어묵을 넣어 부드러워질 때까지 끓여요.'), ('간장떡볶이', ['떡', '간장', '설탕', '양파', '식용유'], '떡을 부드럽게 데친 뒤 양파와 볶다가 간장·설탕·물을 넣어 조려요.'), ('참치마요덮밥', ['밥', '참치', '달걀', '마요네즈', '간장'], '달걀을 완전히 익혀 밥과 참치 위에 올리고 마요네즈와 간장을 더해요.'), ('채소볶음밥', ['밥', '당근', '양파', '대파', '식용유', '소금'], '잘게 썬 채소를 볶고 밥을 넣어 골고루 볶아 간해요.'), ('새우볶음밥', ['밥', '새우', '달걀', '대파', '식용유', '소금'], '새우와 달걀을 완전히 익힌 뒤 밥과 대파를 넣어 볶아요.'), ('햄볶음밥', ['밥', '햄', '양파', '당근', '식용유'], '햄과 채소를 볶다가 밥을 넣어 충분히 볶아요.'), ('닭고기덮밥', ['닭고기', '밥', '양파', '간장', '설탕'], '닭고기를 양파·양념·물과 함께 속까지 충분히 익혀 밥에 올려요.'), ('제육볶음', ['돼지고기', '양파', '대파', '고추장', '간장', '설탕', '마늘'], '고기와 양념을 섞어 채소와 함께 고기가 속까지 완전히 익도록 볶아요.'), ('소고기불고기', ['소고기', '양파', '대파', '간장', '설탕', '마늘'], '고기에 양념과 채소를 섞어 고기가 충분히 익을 때까지 볶아요.'), ('간장닭조림', ['닭고기', '감자', '간장', '설탕', '마늘'], '닭고기와 감자에 양념과 물을 넣고 닭고기 중심까지 완전히 익도록 조려요.'), ('오징어볶음', ['오징어', '양파', '대파', '고추장', '간장', '식용유'], '손질한 오징어와 채소를 양념에 볶아 충분히 익혀요.'), ('어묵볶음', ['어묵', '양파', '간장', '설탕', '식용유'], '어묵과 양파를 볶다가 간장·설탕·물을 넣고 익혀요.'), ('소시지채소볶음', ['소시지', '양파', '케첩', '식용유'], '소시지를 제품 조리법대로 익힌 뒤 양파와 케첩을 넣어 볶아요.'), ('고등어구이', ['고등어', '소금', '식용유'], '손질한 고등어에 소금을 뿌리고 기름 두른 팬에서 속까지 충분히 익혀요.'), ('연어구이', ['연어', '소금', '버터'], '연어에 소금을 뿌리고 버터를 두른 팬에서 중심까지 완전히 익혀요.'), ('새우마늘볶음', ['새우', '마늘', '식용유', '소금'], '마늘을 볶다가 손질한 새우를 넣어 속까지 완전히 익혀요.'), ('브로콜리달걀볶음', ['브로콜리', '달걀', '식용유', '소금'], '브로콜리를 데친 뒤 달걀과 볶아 달걀을 완전히 익혀요.'), ('옥수수치즈구이', ['옥수수', '치즈', '마요네즈', '버터'], '옥수수와 마요네즈를 섞어 버터 두른 팬에 넣고 치즈를 덮어 녹여요.'), ('양배추샐러드', ['양배추', '당근', '마요네즈', '식초'], '깨끗이 씻은 채소를 채 썰어 마요네즈와 식초에 버무려요.'), ('감자샐러드', ['감자', '달걀', '오이', '마요네즈', '소금'], '감자와 달걀을 완전히 익혀 으깨고 오이와 마요네즈를 넣어 섞어요.'), ('달걀샌드위치', ['식빵', '달걀', '마요네즈', '소금'], '완전히 삶은 달걀을 으깨 마요네즈에 섞고 식빵 사이에 넣어요.'), ('프렌치토스트', ['식빵', '달걀', '우유', '버터'], '달걀과 우유를 섞어 식빵을 적시고 버터 두른 팬에서 달걀물이 속까지 익도록 구워요.'), ('치즈토스트', ['식빵', '치즈', '버터'], '식빵 사이에 치즈를 넣고 버터 두른 팬에서 앞뒤로 구워요.'), ('바나나요거트볼', ['바나나', '요거트'], '바나나를 썰어 요거트 위에 올려요.'), ('과일요거트', ['사과', '바나나', '요거트'], '깨끗이 씻고 손질한 과일을 잘라 요거트에 섞어요.'), ('김치소면', ['소면', '김치', '고추장', '식초', '설탕', '참기름'], '소면을 제품 조리법대로 삶아 찬물에 헹구고 김치와 양념에 비벼요.'), ('간장비빔국수', ['소면', '간장', '설탕', '참기름'], '소면을 삶아 헹군 뒤 간장·설탕·참기름으로 비벼요.'), ('마늘파스타', ['파스타', '마늘', '식용유', '소금'], '면을 삶고 마늘을 기름에 볶은 뒤 면과 면수를 넣어 섞어요.'), ('두부채소전', ['두부', '양파', '애호박', '팽이버섯', '달걀', '소금', '식용유'], '물기를 뺀 두부와 잘게 다진 채소·달걀을 섞고 팬에서 양면과 속까지 충분히 익혀요.'), ('애호박감자국', ['감자', '애호박', '두부', '대파', '국간장', '참치액', '소금', '후추'], '감자와 애호박을 육수에 끓이고 감자가 익으면 두부와 양념을 넣어 한소끔 끓여요. 육수는 별도 준비해요.'), ('감자고추장찌개', ['감자', '애호박', '양파', '두부', '대파', '된장', '고추장', '마늘'], '육수에 된장과 고추장을 풀고 감자부터 끓인 뒤 나머지 채소와 두부를 넣어 익혀요. 육수는 별도 준비해요.')])
 
 
+RECIPE_DETAILS = {'김치볶음밥': {'label': '치즈 김치볶음밥 · 공개 레시피 참고 변형', 'servings': '1인분', 'time': '약 15분 (앱 안내용 예상)', 'ingredients': [('밥', '1공기'), ('김치', '1컵, 잘게 썰기'), ('치즈', '70g, 모차렐라 권장'), ('대파', '잘게 썬 것 1컵'), ('간장', '1큰술'), ('설탕', '1/2큰술'), ('고춧가루', '1큰술'), ('식용유', '1큰술부터, 팬에 맞춰 조절')], 'steps': ['김치는 가위나 칼로 잘게 자르고 대파도 송송 썰어요. 밥은 덩어리를 미리 풀어 두세요.', '코팅 팬에 식용유와 대파를 넣고 중불에서 볶아요. 파 향이 올라오면 김치를 넣어 숨이 죽을 때까지 볶아요.', '팬 한쪽을 비워 간장을 넣고 바로 김치와 섞어요. 설탕과 고춧가루를 넣고 불을 낮춰 타지 않게 볶아요.', '밥을 넣어 주걱으로 눌러 풀면서 김치 양념이 고르게 섞이도록 볶아요. 뻑뻑하면 물을 조금씩 더해요.', '밥을 팬에 평평하게 펴고 치즈를 올려요. 약불에서 뚜껑을 덮고 약 3분, 치즈가 녹을 때까지 익혀요.', '바닥이 타기 전에 불을 끄고 접시에 담아요. 김가루나 깨는 있으면 마지막에 곁들여요.'], 'tips': '김치의 짠맛과 신맛이 다르므로 간장·설탕은 일부만 먼저 넣고 맛을 보며 조절하세요. 치즈가 없으면 일반 김치볶음밥으로 마무리할 수 있지만 이 카드의 재료 매칭에는 치즈가 포함돼요.', 'source': '만개의레시피 · 레쉪 작성, 강식당 김치밥 소개', 'url': 'https://www.10000recipe.com/recipe/6918824'}, '제육볶음': {'label': '제육볶음 · 공개 레시피 참고 변형', 'servings': '4인분 (참고 자료 기준)', 'time': '약 30분', 'ingredients': [('돼지고기', '불고기용 얇은 고기 600g'), ('양배추', '1줌'), ('양파', '1/2개'), ('새송이버섯', '1개'), ('당근', '1/2개'), ('청양고추', '2개'), ('홍고추', '1개'), ('대파', '1/2대'), ('참기름', '1큰술'), ('깨', '1큰술'), ('식용유', '팬에 얇게 두를 양'), ('설탕', '3큰술'), ('물', '총 약 1컵, 두 번 나누어 넣기'), ('고추장', '1큰술'), ('고춧가루', '3큰술'), ('간장', '5큰술'), ('마늘', '다진 것 1큰술'), ('맛술', '2큰술'), ('후추', '약간')], 'steps': ['양배추와 양파는 굵게 썰고 당근은 얇게 썰어요. 버섯은 길쭉하게, 대파와 고추는 어슷하게 썰어요. 생고기용 도마·칼은 채소용과 구분해요.', '고추장·고춧가루·간장·마늘·맛술·후추를 섞어요. 간장은 일부 남겨 두었다가 간을 보며 넣어도 좋아요.', '팬에 식용유를 조금 두르고 얇은 돼지고기와 설탕을 넣어 중불에서 풀어 가며 볶아요. 물 1/2컵을 넣어 고기가 뭉치지 않게 해요.', '고기 겉면이 익기 시작하면 섞은 양념과 나머지 물 1/2컵을 넣어요. 양념이 타지 않도록 저어 가며 고기를 충분히 익혀요.', '양배추·양파·버섯·당근·고추·대파를 넣고 볶아요. 고기 중심까지 완전히 익고 채소의 숨이 죽으면 물기를 기호에 맞게 줄여요.', '불을 끄고 참기름과 깨를 섞어요. 조리 중 생고기에 닿은 도구로 완성 음식을 담지 않도록 해요.'], 'tips': '양념이 빨리 타면 불을 낮추고 물을 조금 더하세요. 어린이가 먹으면 청양고추와 고춧가루를 줄이세요. 재료 두께와 화력에 따라 실제 시간은 달라요.', 'source': 'Samsung Food · 백종원 제육볶음 소개 (2차 자료)', 'url': 'https://app.samsungfood.com/recipes/10701930e56db1a72f48e1d09f8b09a2211'}, '된장찌개': {'label': '된장찌개 · 공개 레시피 참고 변형', 'servings': '약 2인분 (앱 편집 기준)', 'time': '약 20분 (앱 안내용 예상)', 'ingredients': [('된장', '1큰술, 약 20g'), ('물', '475ml'), ('양파', '1/2개, 약 100g'), ('애호박', '1/2개, 약 150g'), ('청양고추', '3개, 매운맛에 따라 줄이기'), ('대파', '썬 것 1과 1/2컵, 약 120g'), ('두부', '1/2모, 약 100g'), ('마늘', '다진 것 1/2큰술')], 'steps': ['양파는 약 2cm 크기로 썰고 애호박은 약 0.5cm 두께로 썰어요. 두부는 한입 크기로, 대파와 고추는 송송 썰어요.', '냄비에 물 475ml를 붓고 된장을 풀어요. 된장 염도가 다르므로 일부만 먼저 풀어도 좋아요.', '양파·애호박·마늘을 넣고 중불에서 끓여요. 끓어오르면 불을 조금 줄여 채소가 부드러워질 때까지 익혀요.', '두부·대파·고추를 넣고 다시 끓여 두부까지 뜨겁게 익혀요. 넘치지 않도록 지켜보세요.', '맛을 보고 짜면 물을, 싱거우면 남겨 둔 된장을 조금씩 더해요. 한소끔 끓인 뒤 불을 꺼요.'], 'tips': '참고 글은 고기를 구운 팬에 찌개를 끓이는 방식이에요. 앱에서는 일반 냄비로 만드는 방식으로 바꿨어요. 냉장고에 등록하지 않은 양념은 보유한 것으로 간주하지 않아요.', 'source': '요리비책 명칭의 Tistory 게시글 · 된장찌개 소개 (2차 자료)', 'url': 'https://paik-s-cookingsecretbook.tistory.com/47'}}
+# Detailed variants use their own ingredient lists for accurate availability checks.
+RECIPES = [(title, [n for n, _ in RECIPE_DETAILS[title]["ingredients"] if n != "물"]
+            if title in RECIPE_DETAILS else ingredients, steps)
+           for title, ingredients, steps in RECIPES]
+
+def show_recipe_detail(title):
+    detail = RECIPE_DETAILS.get(title)
+    if not detail:
+        return
+    with st.expander("📖 분량 · 단계별 조리법 · 팁"):
+        st.markdown("**" + detail["label"] + "**")
+        st.caption(detail["servings"] + " · " + detail["time"])
+        st.caption("1큰술 = 15ml, 1작은술 = 5ml. 재료별 g와 ml는 같지 않아요. 물은 재고 비교에서 제외해요.")
+        st.markdown("**준비할 재료**")
+        for ingredient, amount in detail["ingredients"]:
+            st.write(f"• {ingredient}: {amount}")
+        st.markdown("**순서대로 만들기**")
+        for index, step in enumerate(detail["steps"], 1):
+            st.markdown(f"**{index}.** {step}")
+        st.info(detail["tips"])
+        st.markdown(f"참고: [{detail['source']}]({detail['url']})")
+        st.caption("공식 원저자의 검증·제휴 레시피가 아닙니다. 공개 소개 자료의 재료와 방식을 참고해 설명을 다시 작성하고 일부 변형했습니다. 인분·시간 중 앱 편집값은 별도 표시했습니다.")
+
+
 def korea_today():
     return datetime.now(timezone(timedelta(hours=9))).date()
 
@@ -342,18 +370,64 @@ def ingredient_key(name):
     return {"계란": "달걀", "파": "대파", "찬밥": "밥", "쌀밥": "밥", "계란후라이": "계란후라이"}.get(key, key)
 
 
-def recipe_matches(items, today):
-    # Exact normalized ingredient names only; never treat expired stock as available.
+def recipe_matches(items, today, rescue_days=3):
     available = {ingredient_key(i['name']) for i in items
                  if i['quantity'] > 0 and date.fromisoformat(i['expiry_date']) >= today}
+    urgent = {ingredient_key(i['name']) for i in items if i['quantity'] > 0
+              and 0 <= (date.fromisoformat(i['expiry_date'])-today).days <= rescue_days}
     results = []
     for title, ingredients, steps in RECIPES:
         have = [x for x in ingredients if ingredient_key(x) in available]
         missing = [x for x in ingredients if ingredient_key(x) not in available]
+        rescued = sorted({ingredient_key(x) for x in ingredients} & urgent)
         if have:
             results.append(dict(title=title, have=have, missing=missing,
-                                score=len(have)/len(ingredients), steps=steps))
-    return sorted(results, key=lambda r: (-r['score'], -len(r['have']), r['title']))
+                                score=len(have)/len(ingredients), steps=steps, rescued=rescued))
+    return sorted(results, key=lambda r: (-len(r['rescued']), -r['score'], -len(r['have']), r['title']))
+
+
+def purchase_stats(name, unit, items, logs, today):
+    key = ingredient_key(name)
+    def matches(row, field):
+        return ingredient_key(row[field]) == key and row['unit'] == unit
+    recent = []
+    for row in logs:
+        try:
+            age = (today-date.fromisoformat(row['created_at'][:10])).days
+        except (ValueError, TypeError):
+            continue
+        if 0 <= age < 28 and matches(row, 'item_name'):
+            recent.append(row)
+    used = sum(r['quantity'] for r in recent if r['action']=='사용')
+    wasted = sum(r['quantity'] for r in recent if r['action']=='폐기')
+    stock = sum(r['quantity'] for r in items if matches(r, 'name') and r['quantity']>0
+                and date.fromisoformat(r['expiry_date']) >= today)
+    observed_dates = [r['created_at'][:10] for r in recent]
+    observed_dates += [r['purchase_date'] for r in items if matches(r, 'name')]
+    span = min(28, max([(today-date.fromisoformat(d)).days+1 for d in observed_dates if d <= today.isoformat()] or [0]))
+    enough = span >= 28 and any(r['action']=='사용' for r in recent)
+    weekly = used / 4
+    target = max(0, weekly-stock) if enough else None
+    if target is not None and unit in {'개','봉','팩','병'}:
+        import math
+        target = math.ceil(target)
+    return dict(used=used, wasted=wasted, stock=stock, weekly=weekly,
+                suggested=target, enough=enough,
+                waste_events=sum(r['action']=='폐기' for r in recent))
+
+
+def show_purchase_advice(name, unit):
+    s = purchase_stats(name, unit, records('items'), records('logs'), korea_today())
+    st.write(f"현재 사용 가능한 재고: {s['stock']:g}{unit}")
+    if s['enough']:
+        st.write(f"최근 4주 기록상 주당 평균 {s['weekly']:g}{unit} 사용했어요.")
+        st.success(f"다음 1주 기준 추가 구매 제안: {s['suggested']:g}{unit}")
+    else:
+        st.info("4주 관찰 기간 또는 사용 기록이 부족해 구매량을 아직 제안하지 않아요.")
+    if s['waste_events']:
+        st.warning(f"최근 4주 폐기 {s['waste_events']}회 · 총 {s['wasted']:g}{unit}. 대용량보다 소포장·분할 구매를 고려하세요.")
+    st.caption("구매일·사용·폐기 입력 기록만으로 계산합니다. 사용량/4에서 현재 유효 재고를 뺀 1주 보충량이며, 누락 기록·인분·구매 묶음·단위 환산은 반영하지 않아요. 폐기 횟수는 구매 횟수가 아닙니다.")
+
 
 
 initialize()
@@ -366,7 +440,7 @@ st.html("""
   <div class="eyebrow">FRESH TOGETHER</div>
   <div class="headline">냉장고 속 신선함,<br>우리 가족과 뾱!</div>
   <div class="sub">함께 채우고 · 맛있게 요리하고 · 잊기 전에 확인해요</div>
-  <div class="bbyok-produce" aria-hidden="true"><span>🥦</span><span>🍋</span><span>🥕</span><span>🥑</span><span>🍅</span></div>
+  <div class="bbyok-produce" aria-hidden="true"><span>🧊</span><span>✦</span><span>❄</span></div>
 </section>
 """)
 st.caption("가족과 같은 냉장고를 보고, 남은 재료로 요리를 찾아보세요.")
@@ -390,13 +464,43 @@ st.html("""<style>
 .st-key-app_nav button p {font-size:12px!important;white-space:normal;}
 </style>""")
 with st.container(key="app_nav"):
-    buttons = st.columns(5)
-    for col, target in zip(buttons, ["🧊 냉장고", "➕ 추가", "🍳 요리", "🔔 알림", "⚙️ 설정"]):
+    buttons = st.columns(6)
+    for col, target in zip(buttons, ["🧊 냉장고", "➕ 추가", "🍳 요리", "🛒 장보기", "🔔 알림", "⚙️ 설정"]):
         col.button(target, key="nav_"+target, use_container_width=True,
                    type="primary" if st.session_state["screen"] == target else "secondary",
                    on_click=go_screen, args=(target,))
+with connect() as conn:
+    conn.execute("CREATE TABLE IF NOT EXISTS shopping (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, unit TEXT NOT NULL, quantity REAL NOT NULL, done INTEGER NOT NULL DEFAULT 0)")
 screen = st.session_state["screen"]
 days = st.session_state["alert_days"]
+
+if screen == "🛒 장보기":
+    st.subheader("🛒 우리 집 맞춤 장보기")
+    st.caption("같은 앱 주소를 쓰는 가족과 공유하는 장보기 목록이에요.")
+    shop_name = st.text_input("살 재료", placeholder="예: 계란")
+    shop_unit = st.selectbox("구매 단위", UNITS, key="shop_unit")
+    if shop_name.strip():
+        show_purchase_advice(shop_name.strip(), shop_unit)
+    shop_qty = st.number_input("구매할 수량", min_value=0.001, value=1.0, step=1.0, key="shop_qty")
+    if st.button("➕ 장보기 목록에 추가", use_container_width=True):
+        if shop_name.strip():
+            with connect() as conn:
+                conn.execute("INSERT INTO shopping(name,unit,quantity) VALUES(?,?,?)", (valid_text(shop_name,'재료'),shop_unit,shop_qty))
+            st.rerun()
+        else:
+            st.warning("재료 이름을 입력하세요.")
+    with connect() as conn:
+        shopping_rows = [dict(r) for r in conn.execute("SELECT * FROM shopping WHERE done=0 ORDER BY id DESC")]
+    for row in shopping_rows:
+        with st.container(border=True):
+            st.markdown(f"**{row['name']}** · {row['quantity']:g}{row['unit']}")
+            with st.expander("재고·폐기 기록 확인"):
+                show_purchase_advice(row['name'], row['unit'])
+            if st.button("✅ 구매 완료", key=f"shop_done_{row['id']}", use_container_width=True):
+                with connect() as conn:
+                    conn.execute("UPDATE shopping SET done=1 WHERE id=?", (row['id'],))
+                st.rerun()
+    st.caption("구매 완료는 목록 체크만 합니다. 실제 구매량·기한은 ‘추가’ 화면에서 등록하세요. 장보기 목록은 기존 재료 백업에 포함되지 않아요.")
 
 if screen == "⚙️ 설정":
     with st.expander("⚙️ 설정 · 백업", expanded=False):
@@ -488,24 +592,39 @@ def shared_fridge():
                 st.caption("오늘 확인할 재료가 없어요.")
     if screen == "🍳 요리":
         with st.expander("🍳 남은 재료로 요리 찾기", expanded=True):
-            st.caption(f"요리 {len(RECIPES)}종과 비교해요. 양념도 등록해야 보유한 것으로 표시하며, 기한이 지난 재료는 제외해요. 수량·인분은 계산하지 않는 간단 메뉴 아이디어입니다. 물·별도 안내한 육수는 직접 준비하세요.")
+            st.caption(f"요리 {len(RECIPES)}종과 비교해요. 김치볶음밥·제육볶음·된장찌개는 상세 조리법을 제공해요. 양념도 등록해야 보유한 것으로 표시하며, 기한이 지난 재료는 제외해요. 수량·인분은 계산하지 않는 간단 메뉴 아이디어입니다. 물·별도 안내한 육수는 직접 준비하세요.")
             menu_query = st.text_input("요리 이름 검색", placeholder="예: 전, 볶음밥, 국")
+            detailed_only = st.checkbox("📖 상세 조리법 있는 메뉴만 보기")
             only_ready = st.checkbox("등록된 재료가 모두 갖춰진 메뉴만")
             max_results = st.select_slider("추천 개수", options=[10, 20, 40, len(RECIPES)], value=20)
             st.caption("참고: 만개의레시피 두부전·감자고추장찌개, Cookbrief 애호박감자국. 아래 조리 안내는 직접 작성한 요약이며 상세 계량 레시피가 아닙니다.")
             st.markdown("[두부전 참고](https://www.10000recipe.com/recipe/6994053) · [고추장찌개 참고](https://www.10000recipe.com/recipe/6921095) · [애호박감자국 참고](https://cookbrief.com/r/zxfhqb/aehobakgamjaguk)")
-            suggestions = recipe_matches(items, today)
+            suggestions = recipe_matches(items, today, days)
             if not suggestions:
                 st.write("두부, 애호박, 달걀 등 재료를 등록하면 요리를 추천해요.")
-            suggestions = [r for r in suggestions if menu_query.strip() in r['title'] and (not only_ready or not r['missing'])]
+            suggestions = [r for r in suggestions if menu_query.strip() in r['title'] and (not only_ready or not r['missing']) and (not detailed_only or r['title'] in RECIPE_DETAILS)]
             if not suggestions:
                 st.info("조건에 맞는 추천이 없어요. 재료를 추가하거나 검색·필터를 바꿔 보세요.")
             for r in suggestions[:max_results]:
                 st.markdown(f"**{r['title']}** · 재료 일치 {len(r['have'])}/{len(r['have'])+len(r['missing'])}")
+                if r['rescued']:
+                    st.success(f"이 요리를 하면 임박 재료 {len(r['rescued'])}종을 함께 활용할 수 있어요: " + ', '.join(r['rescued']))
+                    st.caption("재료 종류 기준의 활용 후보입니다. 실제 사용량·남김 여부는 계산하지 않으며 기한이 지난 재료는 제외해요.")
                 st.write("있는 재료: " + ', '.join(r['have']))
                 st.write("더 필요한 재료: " + (', '.join(r['missing']) or "없음"))
                 st.caption(r['steps'])
+                show_recipe_detail(r['title'])
     if screen == "🧊 냉장고":
+        rescue = [r for r in recipe_matches(items, today, days) if r['rescued']]
+        st.subheader("🍳 오늘의 식재료 구출")
+        if rescue:
+            best = rescue[0]
+            st.success(f"{best['title']} · 임박 재료 {len(best['rescued'])}종 활용 가능")
+            st.write("함께 쓸 재료: " + ', '.join(best['rescued']))
+            st.caption("부족한 재료: " + (', '.join(best['missing']) or "없음"))
+            st.caption("재료 종류 기준이며 전량 소진을 보장하지 않아요. 상세 추천은 요리 버튼에서 확인하세요.")
+        else:
+            st.caption("현재 등록된 임박 재료로 추천할 구출 메뉴가 없어요.")
         st.subheader(f"🧊 냉장고 재료 {len(items)}종")
         search = st.text_input("재료 검색", placeholder="찾는 재료 이름")
         if not items:
